@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	.container
+		.row
+			.col-xs-8.col-sm-10
+				.panel.panel-primary.clear
+					.panel-body#chat-history		
+						.content					
+				form.col-xs-12#send_msg
+					.input-group
+						input.form-control(type="text", name="msg")
+						span.input-group-btn
+							input.btn.btn-primary(type="submit",value="Send")
+				form#send_whisper
+					.input-group
+						input.form-control(type="text", name="whisper-msg")
+						input(type="hidden",name="targetUser")
+						span.input-group-btn
+							input.btn.btn-warning(type="submit",value="Send Whisper")
+							button.btn.btn-danger#btnCancel(type="button") Cancel
+			.col-xs-4.col-sm-2
+				.panel.panel-info
+					.panel-heading Chatters
+					.panel-body#chatters

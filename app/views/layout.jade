@@ -1,0 +1,38 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+    link(rel='stylesheet',href="/css/style.css")
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        .navbar-header
+            button.navbar-toggle(type="button",data-toggle="collapse", data-target=".navbar-ex3-collapse")
+              span.sr-only Desplegar navegación
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href="#") Simple Chat</a>
+        .collapse.navbar-collapse.navbar-ex3-collapse
+          .container
+            form.navbar-form.navbar-right#conectar
+              .input-group
+                input.form-control(type="text",name='user_name',placeholder='user name')
+                span.input-group-btn
+                  input.btn.btn-info(type="submit",value="Connect")
+              .input-group#options
+                label mostrar eventos
+                .material-switch.pull-right
+                  input#someSwitchOptionPrimary(name="someSwitchOption001",type="checkbox",checked)
+                  label.label-primary(for="someSwitchOptionPrimary")
+    block content
+    <!-- CDN Jquery y Bootstrap3 -->
+    script(src="http://code.jquery.com/jquery-2.1.4.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+    <!-- SOCKET.IO -->
+    script(src="/socket.io/socket.io.js")
+    <!-- Funciones propias -->
+    script(src="/js/functions.js")
